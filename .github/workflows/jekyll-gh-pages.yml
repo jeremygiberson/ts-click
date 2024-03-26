@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   # generate docs
-  build:
+  generate:
     name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
 
     runs-on: ubuntu-latest
