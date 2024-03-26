@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "typedoc": "typedoc --out docs src",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "reflect-metadata": "^0.2.1",
+    "yargs": "^17.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "ts-click",
+  "author": "Jeremy Giberson",
+  "module": "dist/ts-click.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/ts-click.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/ts-click.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.2",
+    "@types/reflect-metadata": "^0.1.0",
+    "husky": "^9.0.11",
+    "size-limit": "^11.0.2",
+    "ts-node": "^10.9.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {}
+}
