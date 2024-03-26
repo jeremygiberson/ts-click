@@ -1,3 +1,6 @@
+/**
+ * @since 0.1.0
+ */
 import 'reflect-metadata';
 import * as yargs from 'yargs';
 import {Arguments, InferredOptionTypes} from 'yargs';
@@ -42,7 +45,9 @@ type OptionMetadata = {
  * Identifies a class as a group of commands
  * @param name The name of the group command.
  * @param options {description} A description of the group command, used in the help output.
- * @constructor
+ *
+ * @since 0.1.0
+ * @category Decorator
  */
 export const Group = (name: string, options?: {description?: string}): ClassDecorator => {
   return (target) => {
@@ -66,7 +71,9 @@ export const Group = (name: string, options?: {description?: string}): ClassDeco
  * @param name The name of the command. If not provided, the method name will be used.
  * @param description A description of the command, used in the help output.
  * @param isDefault If true, this command will be executed if no other command is specified.
- * @constructor
+ *
+ * @since 0.1.0
+ * @category Decorator
  */
 export const Command = ({name, description, isDefault}: CommandDecoratorParams = {}): MethodDecorator => {
   return (target, propertyKey, descriptor) => {
@@ -97,7 +104,9 @@ export const Command = ({name, description, isDefault}: CommandDecoratorParams =
  * Identifies a method parameter as an option for the command.
  * @param name The name of the option. If not provided, the parameter name will be used.
  * @param options {alias, array, boolean, choices, coerce, config, configParser, conflicts, count, default, defaultDescription, demandOption, desc, describe, description, global, group, implies, nargs, normalize, number, requiresArg, skipValidation, string, type, implies, requiresArg, skipValidation, hidden, implies, requiresArg, skipValidation, type, demandOption, required} See yargs.Options for details.
- * @constructor
+ *
+ * @since 0.1.0
+ * @category Decorator
  */
 export const Option = (name: string, options?: Omit<yargs.Options,"name">): ParameterDecorator => {
   return (target, propertyKey, parameterIndex) => {
@@ -122,7 +131,9 @@ export const Option = (name: string, options?: Omit<yargs.Options,"name">): Para
  * Identifies a method parameter as an argument (positional option) for the command.
  * @param name The name of the argument.
  * @param options {array, boolean, choices, coerce, config, configParser, conflicts, count, default, defaultDescription, demandOption, desc, describe, description, global, group, implies, nargs, normalize, number, requiresArg, skipValidation, string, type, implies, requiresArg, skipValidation, hidden, implies, requiresArg, skipValidation, type, demandOption, required} See yargs.PositionalOptions for details.
- * @constructor
+ *
+ * @since 0.1.0
+ * @category Decorator
  */
 export const Argument = (name: string, options?: yargs.PositionalOptions & {required?: boolean}): ParameterDecorator => {
   return (target, propertyKey, parameterIndex) => {
@@ -172,6 +183,9 @@ function registerCommand(instance: Object, command: CommandMetadata, options: Op
  * Run the CLI
  * Run is effectively the main entry point for the CLI. It will parse the command line arguments and execute the appropriate command.
  * @returns {Promise<void>}
+ *
+ * @since 0.1.0
+ * @category Entry Point
  */
 export const run = () => {
   // @ts-ignore

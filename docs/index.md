@@ -1,14 +1,19 @@
+---
+title: TS Click
+nav_order: 1
+---
+
 # TS Click
 TS Click is heavily inspired by the original [Click](https://click.palletsprojects.com/en/8.1.x/) library for Python.
 
 It aims tp provide a similar experience to writing CLIs as the original library, in the TypeScript ecosystem.
 
-Under the hood the library uses [yargs](https://yargs.js.org/) to parse the arguments and options. 
+Under the hood the library uses [yargs](https://yargs.js.org/) to parse the arguments and options.
 
 TS Click in three points:
- * Typesafe decorators for defining commands, arguments, and options
- * CLI definitions are co-located with the class/method/arguments that implements the command
- * Leverages the existing (mature and robust) yargs library for familiarity and functionality
+* Typesafe decorators for defining commands, arguments, and options
+* CLI definitions are co-located with the class/method/arguments that implements the command
+* Leverages the existing (mature and robust) yargs library for familiarity and functionality
 
 ## Why use ts-click?
 IMHO, it provides a cleaner, more intuitive way to write CLIs. I think it results in code that is easier to understand and maintain than using yargs directly.
@@ -47,24 +52,3 @@ run();
 
 In such a simple example, the difference is not that big, but as the complexity of the CLI grows, the benefits of ts-click become more apparent.
 
-
-## Installation
-This library requires TypeScript 4.0 or later, with `experimentalDecorators` enabled in your `tsconfig.json`.
-
-1. Install the library via `npm install ts-click` or `yarn add ts-click`
-2. Create a class(es) with the commands, arguments, and options (see examples or docs).
-3. Create an entrypoint file that calls `run()` (where run is imported from the library)
-   a. the entry point file should include the class or classes where the commands are defined via `import * from "./path/to/commandfile.ts"` imports.
-   b. for single command scripts, this can be done in the same file as the command class definition.
-4. Run the script with `ts-node` or compile it to JavaScript and run it with `node`
-
-Notes: You can have multiple entry point files if you prefer to split your commands by concern or functionality. 
-
-## Roadmap
-- [x] commands
-- [x] positional arguments
-- [x] options
-- [x] subcommands
-- [ ] check function
-- [ ] command middleware
-- [ ] dependency injection for classes?

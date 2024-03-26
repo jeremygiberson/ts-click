@@ -1,0 +1,11 @@
+title: TS Click
+description: TypeScript Command Line Interface Creation Kit (TS Click)
+remote_theme: pmarsceill/just-the-docs
+
+# Enable or disable the site search
+search_enabled: true
+
+# Aux links for the upper right navigation
+aux_links:
+  'ts-click on GitHub':
+    - 'https://github.com/jeremygiberson/ts-click'
