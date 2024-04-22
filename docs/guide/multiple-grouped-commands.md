@@ -13,7 +13,7 @@ We'll continue with that pattern and add another group of commands to our CLI, i
 
 
 ```typescript
-import {Argument, Command, Group, Option, run} from "../../src";
+import {Argument, Command, Group, Option, run} from "ts-click";
 
 @Group('baker', {description: 'Provides baked goods'})
 // @ts-ignore

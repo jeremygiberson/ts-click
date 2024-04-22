@@ -20,7 +20,7 @@ In TS Click, grouped commands are defined as methods in a class, decorated with 
 
 ```typescript
 // file greeter.ts
-import {Argument, Command, Group, Option, run} from "../../src";
+import {Argument, Command, Group, Option, run} from "ts-click";
 
 @Group('greeter', {description: 'Provides salutation commands'})
 // @ts-ignore

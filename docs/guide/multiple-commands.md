@@ -18,7 +18,7 @@ As we saw in the previous section, we can decorate a method in a class with `@Co
 Here's an example of a CLI with two commands that print a greeting or a farewell to the console:
 
 ```typescript
-import {Argument, Command, Option, run} from "../../src";
+import {Argument, Command, Option, run} from "ts-click";
 
 // @ts-ignore
 class DoesntMatter {
